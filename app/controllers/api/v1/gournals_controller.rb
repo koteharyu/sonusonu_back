@@ -17,6 +17,6 @@ class Api::V1::GournalsController < ApplicationController
   private
 
   def gournal_params
-    params.require(:gournal).permit(:title, :content)
+    params.require(:gournal).permit(:title, :content, :image)
   end
 end
