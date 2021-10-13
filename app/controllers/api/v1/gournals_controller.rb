@@ -2,13 +2,13 @@ class Api::V1::GournalsController < ApplicationController
 
   def index
     gournals = Gournal.order(created_at: :desc)
-    render json: gournals
+    render json: gournals, methods: [:image_url]
   end
 
   def create
     gournal = Gournal.new(gournal_params)
     if gournal.save
-      render json: gournal
+      render json: gournal, methods: [:image_url]
     else
       render json: gournal.errors
     end
