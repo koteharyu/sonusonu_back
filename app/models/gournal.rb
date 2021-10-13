@@ -1,0 +1,2 @@
+class Gournal < ApplicationRecord
+end
