@@ -14,6 +14,11 @@ class Api::V1::GournalsController < ApplicationController
     end
   end
 
+  def three_gournals
+    gournals = Gournal.recent(3)
+    render json: gournals, each_serializer: GournalSerializer
+  end
+
   private
 
   def gournal_params
