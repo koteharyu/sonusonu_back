@@ -14,4 +14,6 @@ class Gournal < ApplicationRecord
   def author_image_url
     author_image.attached? ? url_for(author_image) : nil
   end
+
+  scope :recent, -> (count) { order(created_at: :desc).limit(count)}
 end
